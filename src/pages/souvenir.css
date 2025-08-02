@@ -1,0 +1,24 @@
+/* Định vị sidebar nằm thấp bên phải */
+.sidebar {
+    position: fixed;    /* hoặc absolute tùy cấu trúc tổng thể */
+    top: 80px;          /* đẩy thấp xuống 80px để không sát đầu */
+    right: 20px;        /* cách mép phải 20px */
+    width: 250px;       /* độ rộng phù hợp */
+    z-index: 10;        /* hiển thị trên layer của Canvas nếu cần */
+}
+
+/* Kiểu khối cho từng nhóm điều khiển */
+.sidebar-section {
+    background: #fff;
+    border-radius: 8px;             /* bo tròn góc khung:contentReference[oaicite:2]{index=2} */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);  /* bóng đổ nhẹ quanh khối:contentReference[oaicite:3]{index=3} */
+    padding: 12px 16px;
+    margin-bottom: 16px;
+}
+
+/* Tiêu đề nhóm */
+.sidebar-section h3 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    font-weight: bold;
+}

@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>vite.config.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #c792ea; font-style: italic;}
+.s1 { color: #c3cee3;}
+.s2 { color: #89ddff;}
+.s3 { color: #c3e88d;}
+</style>
+</head>
+<body bgcolor="#263238">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+vite.config.js</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s2">{ </span><span class="s1">defineConfig </span><span class="s2">} </span><span class="s1">from </span><span class="s3">'vite'</span>
+<span class="s0">import </span><span class="s1">react from </span><span class="s3">'@vitejs/plugin-react'</span>
+<span class="s0">import </span><span class="s1">tailwindcss from </span><span class="s3">'@tailwindcss/vite'</span>
+
+<span class="s0">export default </span><span class="s1">defineConfig</span><span class="s2">({</span>
+  <span class="s1">plugins</span><span class="s2">: [</span><span class="s1">react</span><span class="s2">(), </span><span class="s1">tailwindcss</span><span class="s2">()],</span>
+  <span class="s1">server</span><span class="s2">: {</span>
+    <span class="s1">proxy</span><span class="s2">: {</span>
+      <span class="s3">'/chat.php'</span><span class="s2">: {</span>
+        <span class="s1">target</span><span class="s2">: </span><span class="s3">'http://localhost/DACS/public'</span><span class="s2">,</span>
+        <span class="s1">changeOrigin</span><span class="s2">: </span><span class="s0">true</span><span class="s2">,</span>
+        <span class="s1">rewrite</span><span class="s2">: (</span><span class="s1">path</span><span class="s2">) =&gt; </span><span class="s1">path</span><span class="s2">.</span><span class="s1">replace</span><span class="s2">(</span><span class="s3">/^\/chat\.php/</span><span class="s2">, </span><span class="s3">'/chat.php'</span><span class="s2">),</span>
+      <span class="s2">},</span>
+    <span class="s2">},</span>
+  <span class="s2">},</span>
+<span class="s2">})</span>
+</pre>
+</body>
+</html>
